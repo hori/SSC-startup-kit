@@ -1,0 +1,31 @@
+// display:box; must be used for any of the other flexbox mixins to work properly
+=_display-box()
+  +experimental-value(display, box, -moz, -webkit, not -o, -ms, not -khtml, official)
+
+=_box-flex($flex)
+  +experimental(box-flex, $flex)
+
+// Sprite images for retina display
+=sprite-background-2x($map, $name)
+  $_x: round(nth(sprite-position($map, $name), 1) / 2)
+  $_y: round(nth(sprite-position($map, $name), 2) / 2)
+  background-image: sprite-url($map)
+  background-position: $_x $_y
+  background-repeat: no-repeat
+  $_w: image-width(sprite-path($map)) / 2
+  +background-size($_w auto)
+  width: image-width(sprite-file($map, $name)) / 2
+  height: image-height(sprite-file($map, $name)) / 2
+
+// Background image for retina display
+=background-image-2x($path)
+  background-image: image-url($path)
+  +background-size((image-width($path) / 2) auto)
+
+// ellipsis on multi lines
+=line-clamp($line)
+  +display-box
+  +box-orient(vertical)
+  +experimental(line-clamp, $line, not -moz, -webkit, not -o, not -ms, not -khtml, not official)
+  overflow: hidden
+  text-overflow: ellipsis
