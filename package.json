@@ -1,7 +1,8 @@
 {
   "name": "ssc-startup-kit",
   "version": "1.0.0",
-  "description": "markup startup kit",
+  "description": "Static pages startup kit with slim, sass & compass.",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": ""

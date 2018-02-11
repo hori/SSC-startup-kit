@@ -1,23 +1,20 @@
-# SSC startup kit
+# ssc-startup-kit
 Static pages startup kit with slim, sass & compass.
 
 ## How to use
 
-Install gems and gulp if you need.
-```
-gem install slim
-gem install compass
-npm install -g gulp
-```
+1. Install bundler and npm if you need.
+1. Install gems and node-modules.
 
 ```
+bundle install
 npm install
 ```
 
 ## run
 
 ```
-gulp
+npx gulp
 ```
 
 and open http://localhost:8000
